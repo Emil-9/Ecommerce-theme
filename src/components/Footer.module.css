@@ -1,0 +1,36 @@
+.footer {
+  background-color: #f86338;
+  color: #ffffff;
+  padding: 47px 20px 117px 20px;
+  
+}
+.footer-container {
+  max-width: 1250px;
+  margin: auto;
+}
+.row {
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  gap: 4%;
+  flex-wrap: wrap;
+}
+.footer-logo {
+  max-width: 240px;
+}
+.footer a,
+.footer p,
+.footer li {
+  color: #ffffff;
+  line-height: 20px;
+  font-size: 15px;
+}
+
+.row > div {
+  flex: 0 0 20%;
+}
+
+.row > div:first-of-type {
+  flex: 0 0 33.333333%;
+}

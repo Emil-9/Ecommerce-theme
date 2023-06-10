@@ -1,0 +1,26 @@
+.first-section {
+  display: flex;
+  max-width: calc( 1250px + 10%);
+  margin: auto;
+  margin-left: 6%;
+  padding-left: 20px;
+  padding-bottom: 200px;
+}
+.first-section .col:first-of-type {
+  flex: 0 0 30.333333%;
+  padding-right: 120px;
+}
+.first-section .col:nth-of-type(1) {
+  flex: 0 0 37.333333%;
+}
+.first-section .col:nth-of-type(2) {
+  flex: 0 0 40.333333%;
+}
+.imgEmpty {
+  background-color: #e2e2ea;
+  max-height: 620px;
+  max-width: 504px;
+  width: 620px;
+  height: 504px;
+  margin-left: 10px;
+}

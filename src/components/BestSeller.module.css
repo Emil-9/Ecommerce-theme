@@ -1,0 +1,11 @@
+.m-tb-100 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.products-list { 
+    display: flex;
+    gap: 1%;
+}
+.products-list li { 
+    flex-basis: 0 0 20%;
+}

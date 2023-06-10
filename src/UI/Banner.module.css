@@ -1,0 +1,10 @@
+.banner-container {
+  min-height: 50vh;
+  min-width: 70vw;
+  margin: 100px auto;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

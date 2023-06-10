@@ -1,0 +1,51 @@
+@font-face {
+  font-family: MerriWeatherBold;
+  src: url("../fonts/Merriweather/Merriweather-Bold.ttf");
+  font-weight: 700;
+}
+
+.filter-items {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 64px;
+  margin-bottom: 80px;
+}
+
+.filter-items li button {
+  font-family: "MerriWeatherBold";
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #9a9ab0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.filter-items li button.active,
+.filter-items li button:hover {
+  color: #f86338;
+}
+.active::after,
+.filter-items li button::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  bottom: -16px;
+  left: 0;
+  transform: scaleX(0);
+  background-color: #f86338;
+  transition: all 0.5s ease;
+}
+.filter-items li button.active::after,
+.filter-items li button:hover::after {
+  transform: scaleX(1);
+}
+.filter-items li button:focus-visible {
+  outline: none;
+  border: none;
+}

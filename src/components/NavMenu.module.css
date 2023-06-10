@@ -1,0 +1,22 @@
+.pages-menu {
+  display: flex;
+  justify-content: start;
+  gap: 38px;
+  align-items: center;
+}
+.nav-menu,
+.cart-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.cart-menu img {
+  height: 21px;
+  width: auto;
+}
+.nav-menu { 
+  max-width: 1250px;
+  padding: 20px;
+  margin: auto;
+}

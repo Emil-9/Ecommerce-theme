@@ -1,0 +1,13 @@
+.button-link {
+  padding: 16px 24px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  width: fit-content;
+  margin-top: 36px;
+  transition: all 0.3s ease;
+}
+.button-link:focus-visible {
+  outline: none;
+  border: none;
+}

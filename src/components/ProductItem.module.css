@@ -1,0 +1,68 @@
+@font-face {
+  font-family: MerriWeather;
+  src: url("../fonts/Merriweather/Merriweather-Regular.ttf");
+}
+.product-item .prod-img {
+  max-width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.product-item {
+  flex: 1 0 21%;
+  text-align: center;
+}
+
+.product-item h5 {
+  color: #11142d;
+  font-size: 24px;
+  margin: 0;
+
+  font-family: "MerriWeather";
+}
+.category {
+  font-size: 14px;
+  color: #f86338;
+}
+h5.price {
+  font-size: 24px;
+  color: #f86338;
+}
+.description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 31ch;
+  display: inline-block;
+  width: 31ch;
+}
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 18ch;
+  border-radius: 5px;
+}
+.add-to-fav {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #fff;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.add-to-fav:focus-visible {
+  outline: none;
+  border: none;
+}
+.add-to-fav img {
+  width: 15px;
+  background-color: #fff;
+  color: #ffffff;
+  fill: #ffffff;
+}
