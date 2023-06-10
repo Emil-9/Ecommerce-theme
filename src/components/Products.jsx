@@ -41,7 +41,7 @@ const Products = (props) => {
   }, [categoryFilter]);
 
   useEffect(() => {
-    if (!loading) {
+    if (!loading && priceRange) {
       const timer = setTimeout(() => {
         console.log("update price range", priceRange);
         if (priceRange.length > 0) {
