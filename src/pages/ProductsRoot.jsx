@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import HeroSection from "../components/HeroSection";
 import NavMenu from "../components/NavMenu";
 const ProductsRoot = () => {
-  console.log('inside root product page');
   return (
     <>
       <NavMenu />

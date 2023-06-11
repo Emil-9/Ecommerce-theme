@@ -1,9 +1,14 @@
+import { useDispatch } from "react-redux";
+import { cartActions } from "../store/cart-slice";
+import { favActions } from "../store/fav-slice";
 import CustomButton from "../UI/CustomButton";
 import CartIcon from "../images/cart";
 import CheckCircleIcon from "../images/checkCircle";
 import StarIcon from "../images/star";
 import classes from "./ProductDetails.module.css";
+
 const ProductDetails = (props) => {
+  const dispatch = useDispatch();
   const ButtonStyle = {
     color: "#ffffff",
     backgroundColor: "#F86338",
@@ -17,11 +22,12 @@ const ProductDetails = (props) => {
   };
 
   const addToCartHandler = (target) => {
-    console.log("dispatch here");
+    dispatch(cartActions.addItem({ item: props.itemData }));
   };
 
   const addToFavHandler = (target) => {
     console.log("dispatch here");
+    dispatch(favActions.addItem({ item: props.itemData }));
   };
 
   return (

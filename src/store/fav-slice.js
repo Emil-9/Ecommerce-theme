@@ -10,12 +10,17 @@ const favSlice = createSlice({
   name: "calculate",
   initialState: initialState,
   reducers: {
-    // first reducer -> add a new row with the value of 0
     addItem(state, action) {
-      state.items.push(action.payload.item);
+      const findIndex = state.items.findIndex(
+        (e) => +e.id === +action.payload.item.id
+      );
+      if (findIndex === -1) {
+        state.items.push(action.payload.item);
+      } else {
+        return;
+      }
     },
 
-    // second reducer -> delete a row depending on the passed row id
     removeItem(state, action) {
       state.items = state.items.filter((elem) => elem.id !== action.payload.id);
     },

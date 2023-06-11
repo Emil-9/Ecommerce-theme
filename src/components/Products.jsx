@@ -58,7 +58,6 @@ const Products = (props) => {
                 .trim()
                 .includes(onSearch.toString().toLowerCase().trim())
           );
-          console.log("filtered", filterData);
           setFilteredData(filterData);
         }
       }

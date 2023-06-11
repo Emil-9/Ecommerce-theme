@@ -3,13 +3,11 @@ import ProductDetails from "../components/ProductDetails";
 import { Await, defer, json, useRouteLoaderData } from "react-router-dom";
 
 const ProductPage = () => {
-  console.log("inside product page ");
   const { event } = useRouteLoaderData("product-details");
   return (
     <Suspense fallback={<p style={{ textAlign: "center" }}>loading</p>}>
       <Await resolve={event}>
         {(loadProduct) => {
-          console.log('load product -> ', loadProduct);
           return <ProductDetails itemData={loadProduct} />;
         }}
       </Await>
@@ -25,16 +23,13 @@ async function loadProduct(id) {
       { status: 500 }
     );
   } else {
-    console.log(response);
     const resData = await response.json();
-    console.log(resData);
     return resData;
   }
 }
 
 export async function loader({ request, params }) {
   const id = params.productId; //productId is passed from apps.js router the name should be identical
-  console.log("loader function -> id", id);
   return defer({
     event: await loadProduct(id),
   });

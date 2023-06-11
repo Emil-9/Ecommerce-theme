@@ -15,8 +15,27 @@
   height: 21px;
   width: auto;
 }
-.nav-menu { 
+.nav-menu {
   max-width: 1250px;
   padding: 20px;
   margin: auto;
+}
+.cartIcon-container {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.cart-badge {
+  position: absolute;
+  top: -27%;
+  right: -10%;
+  background-color: #f3692e;
+  color: #ffffff;
+  font-size: 11px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

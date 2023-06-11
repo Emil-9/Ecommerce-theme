@@ -29,7 +29,6 @@ const ShopFull = () => {
   };
 
   const searchHandler = (data) => {
-    console.log(data.target.value);
     setSearchParam(data.target.value);
   };
 
