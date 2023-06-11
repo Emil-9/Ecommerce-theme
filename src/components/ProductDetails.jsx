@@ -22,12 +22,13 @@ const ProductDetails = (props) => {
   };
 
   const addToCartHandler = (target) => {
-    dispatch(cartActions.addItem({ item: props.itemData }));
+    console.log('inside details -> add to cart -> ', props.itemData);
+    dispatch(cartActions.addItem({ cartItem: props.itemData }));
   };
 
   const addToFavHandler = (target) => {
     console.log("dispatch here");
-    dispatch(favActions.addItem({ item: props.itemData }));
+    dispatch(favActions.addToFav({ item: props.itemData }));
   };
 
   return (

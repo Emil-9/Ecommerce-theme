@@ -5,6 +5,7 @@ import HeartIcon from "../images/heart";
 import { Link } from "react-router-dom";
 const ProductItem = (props) => {
   const dispatch = useDispatch();
+
   const addToFavHandler = (event) => {
     event.preventDefault();
     const item = {
@@ -15,7 +16,7 @@ const ProductItem = (props) => {
       category: props.cat,
       src: props.src,
     };
-    dispatch(favActions.addItem({ item: item }));
+    dispatch(favActions.addToFav({ item: item }));
   };
   return (
     <li className={classes["product-item"]}>

@@ -7,10 +7,13 @@ import { useSelector } from "react-redux";
 
 const NavMenu = () => {
   //Get redux store data
+
   const cartData = useSelector((state) => state.cartReducer.cartItems);
   const favItems = useSelector((state) => state.favouriteReducer.items);
 
-  const cartLength = cartData.length; // check array length
+  const cartLength = cartData.length; // check cart array length
+  const favAmount = favItems.length; // check fav length
+
   let totalAmount = 0;
   if (cartLength > 0) {
     const initialValue = 0;
@@ -20,7 +23,6 @@ const NavMenu = () => {
       initialValue
     );
   }
-  const favAmount = favItems.length;
 
   return (
     <nav className={classes["nav-menu"]}>

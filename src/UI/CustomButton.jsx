@@ -2,6 +2,7 @@ import classes from "./CustomButton.module.css";
 
 const CustomButton = (props) => {
   const clickHandler = (event) => {
+    event.preventDefault();
     props.onClickBtn(event);
   };
   return (

@@ -7,14 +7,14 @@ const initialState = {
 
 // create the slice with reducers
 const favSlice = createSlice({
-  name: "calculate",
+  name: "likedProducts",
   initialState: initialState,
   reducers: {
-    addItem(state, action) {
-      const findIndex = state.items.findIndex(
+    addToFav(state, action) {
+      const favIndex = state.items.findIndex(
         (e) => +e.id === +action.payload.item.id
       );
-      if (findIndex === -1) {
+      if (favIndex === -1) {
         state.items.push(action.payload.item);
       } else {
         return;

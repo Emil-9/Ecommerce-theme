@@ -7,18 +7,21 @@ const initialState = {
 
 // create the slice with reducers
 const cartSlice = createSlice({
-  name: "calculate",
+  name: "shopingCart",
   initialState: initialState,
   reducers: {
     addItem(state, action) {
+      console.log("adding to cart ");
       const findCartIndex = state.cartItems.findIndex(
-        (e) => +e.id === +action.payload.item.id
+        (e) => +e.id === +action.payload.cartItem.id
       );
+
+      console.log(findCartIndex);
       if (findCartIndex === -1) {
-        state.cartItems.push({ ...action.payload.item, total: 1 });
+        state.cartItems.push({ ...action.payload.cartItem, total: 1 });
       } else {
         state.cartItems[findCartIndex] = {
-          ...state.cartItems[findCartIndex],
+          ...action.payload.cartItem,
           total: state.cartItems[findCartIndex].total + 1,
         };
       }
