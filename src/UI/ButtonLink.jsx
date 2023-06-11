@@ -9,12 +9,15 @@ const ButtonLink = (props) => {
       to={props.linkTo}
     >
       {props.title} &nbsp;
-      <NextIcon
-        style={props.style}
-        fill={props.fill}
-        height={props.height}
-        width={props.width}
-      />
+      {props.children}
+      {props.nextIcon && (
+        <NextIcon
+          style={props.style}
+          fill={props.fill}
+          height={props.height}
+          width={props.width}
+        />
+      )}
     </Link>
   );
 };

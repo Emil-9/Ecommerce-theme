@@ -11,13 +11,14 @@ const HeroSection = () => {
           company.
         </p>
         <ButtonLink
+          nextIcon
           style={{ backgroundColor: "#F86338", color: "#ffffff" }}
           linkTo="/shop"
           title="Shop"
         />
       </div>
-      <div className={classes['col'] + ' ' + classes.imgEmpty}></div>
-      <div className={classes['col'] + ' ' + classes.imgEmpty}></div>
+      <div className={classes["col"] + " " + classes.imgEmpty}></div>
+      <div className={classes["col"] + " " + classes.imgEmpty}></div>
     </section>
   );
 };

@@ -7,6 +7,10 @@ import AboutPage from "./pages/About";
 import FAQPage from "./pages/FAQ";
 import Blog from "./pages/Blog";
 import ShopPage from "./pages/ShopPage";
+import ProductPage, {
+  loader as productDetailsLoader,
+} from "./pages/ProductPage";
+import ProductsRoot from "./pages/ProductsRoot";
 
 function App() {
   const router = createBrowserRouter([
@@ -30,6 +34,23 @@ function App() {
         {
           path: "/shop",
           element: <ShopPage />,
+        },
+        {
+          path: "/products",
+          element: <ProductsRoot />,
+          children: [
+            {
+              path: ":productId",
+              id: "product-details",
+              loader: productDetailsLoader,
+              children: [
+                {
+                  index: true,
+                  element: <ProductPage />,
+                },
+              ],
+            },
+          ],
         },
       ],
     },

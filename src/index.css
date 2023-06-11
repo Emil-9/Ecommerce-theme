@@ -7,6 +7,11 @@
   src: url("./fonts/Merriweather/Merriweather-Bold.ttf");
   font-weight: 700;
 }
+@font-face {
+  font-family: MerriWeather;
+  src: url("./fonts/Merriweather/Merriweather-Regular.ttf");
+  font-weight: 700;
+}
 body {
   font-family: "DM-Sans";
   margin: 0;
@@ -38,4 +43,35 @@ h1 {
 }
 h2 {
   font-size: 48px;
+}
+.max-1250 {
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.color-orange {
+  color: #f3692e;
+}
+.font-MerriWeather {
+  font-family: "MerriWeather";
+}
+.font-MerriWeatherBold {
+  font-family: "MerriWeatherBold";
+}
+.color-grey {
+  color: #515151;
+}
+.color-dark {
+  color: #11142d;
+}
+.text-color {
+  color: #666666;
+}
+hr {
+  background-color: #e1e1e1;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }

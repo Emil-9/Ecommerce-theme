@@ -13,6 +13,7 @@ const DiscountSection = (props) => {
         <h5 className={classes["mt-0"]}>March Discount</h5>
         <h1>Up to 70% off</h1>
         <ButtonLink
+          nextIcon
           className={classes["m-auto"]}
           style={buttonStyle}
           linkTo="/"

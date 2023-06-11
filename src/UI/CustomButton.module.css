@@ -1,16 +1,18 @@
-.button-link {
+.custom-button {
   padding: 16px 24px;
   border: none;
   border-radius: 8px;
   display: flex;
   width: fit-content;
   margin-top: 36px;
+  outline: none;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
-.button-link:focus-visible {
+.custom-button:focus-visible {
   outline: none;
   border: none;
 }
-.button-link:hover { 
-  box-shadow: 0 0 10px 10px #f8623819;
+.custom-button:hover { 
+    box-shadow: 0 0 10px 10px #f8623819;
 }
