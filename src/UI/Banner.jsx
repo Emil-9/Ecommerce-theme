@@ -2,7 +2,7 @@ import classes from "./Banner.module.css";
 const Banner = (props) => {
   return (
     <div
-      style={{ color: props.color, backgroundColor: props.bgc }}
+      style={props.style}
       className={classes["banner-container"]}
     >
         <div className={classes.centered}>

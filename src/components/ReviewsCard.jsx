@@ -33,6 +33,7 @@ const ReviewsCard = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoPlat: true,
     nextArrow: <NextArrow className={classes["slick-next"]} />,
     prevArrow: <PrevArrow className={classes["slick-prev"]} />,
   };

@@ -7,6 +7,10 @@ const FiltersBar = (props) => {
   const [data, setData] = useState();
   const [error, setError] = useState(null);
 
+  let listItems = classes["filter-items"];
+  if (props.vertical) {
+    listItems = classes["filter-items"] + " " + classes["vertical"];
+  }
   const categoryHandler = (event) => {
     document.querySelectorAll("button").forEach((el) => (el.className = "")); //clear active classes before activating the new one
     event.target.className = classes["active"];
@@ -30,7 +34,6 @@ const FiltersBar = (props) => {
           throw new Error("Request failed!");
         }
         const data = await response.json();
-        console.log(data);
         setData(["All", ...data]);
       } catch (err) {
         setError(err.message || "Something went wrong!");
@@ -42,7 +45,7 @@ const FiltersBar = (props) => {
 
   return (
     <nav className={classes["filters-nav"]}>
-      <ul className={classes["filter-items"]}>
+      <ul className={listItems} style={props.style}>
         {loading && <Spinner />}
         {data &&
           !error &&
@@ -51,7 +54,8 @@ const FiltersBar = (props) => {
             return (
               <li className={classes["category-item"]} key={key}>
                 <button
-                  className={key === 0 ? classes['active'] : ''}
+                  style={props.itemStyle}
+                  className={key === 0 ? classes["active"] : ""}
                   id={el}
                   onClick={categoryHandler}
                 >

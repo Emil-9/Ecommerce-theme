@@ -11,12 +11,13 @@
 .product-item {
   flex: 1 0 21%;
   text-align: center;
+  position: relative;
 }
 
 .product-item h5 {
   color: #11142d;
   font-size: 24px;
-  margin: 0;
+  margin: 0 auto;
 
   font-family: "MerriWeather";
 }
@@ -40,7 +41,7 @@ h5.price {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: inline-block;
+  display: block;
   width: 18ch;
   border-radius: 5px;
 }
@@ -55,6 +56,10 @@ h5.price {
   color: #ffffff;
   border: none;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid #11142D;
 }
 .add-to-fav:focus-visible {
   outline: none;

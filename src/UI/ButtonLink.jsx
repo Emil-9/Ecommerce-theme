@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import classes from "./ButtonLink.module.css";
-import nextIcon from "../images/next.svg";
+import NextIcon from "../images/next";
 const ButtonLink = (props) => {
   return (
     <Link
@@ -9,7 +9,12 @@ const ButtonLink = (props) => {
       to={props.linkTo}
     >
       {props.title} &nbsp;
-      <img style={props.style} src={nextIcon} alt="" />
+      <NextIcon
+        style={props.style}
+        fill={props.fill}
+        height={props.height}
+        width={props.width}
+      />
     </Link>
   );
 };

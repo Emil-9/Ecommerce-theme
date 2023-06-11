@@ -1,9 +1,18 @@
 .mainPage {
-    margin: auto;
-  }
-  .paddingMain {
-    max-width: 1250px;
-    padding: 20px;
-    margin: auto;
-  }
-  
+  margin: auto;
+}
+.paddingMain {
+  max-width: 1250px;
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  align-items: top;
+  justify-content: flex-start;
+  gap: 26px;
+}
+.paddingMain > div:first-of-type {
+  flex-basis: 0 0 0 30%;
+}
+.paddingMain > div:nth-of-type(2) {
+  flex-basis: 0 0 0 calc(70% - 16px);
+}

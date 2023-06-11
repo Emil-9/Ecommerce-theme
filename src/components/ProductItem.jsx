@@ -1,10 +1,11 @@
 import classes from "./ProductItem.module.css";
-import heart from "../images/heart.svg";
 import { useDispatch } from "react-redux";
 import { favActions } from "../store/fav-slice";
+import HeartIcon from "../images/heart";
 const ProductItem = (props) => {
   const dispatch = useDispatch();
   const addToFavHandler = (event) => {
+    event.preventDefault();
     const item = {
       id: props.id,
       title: props.title,
@@ -22,7 +23,7 @@ const ProductItem = (props) => {
         onClick={addToFavHandler}
         className={classes["add-to-fav"]}
       >
-        <img src={heart} alt="" />
+        <HeartIcon fill="black" height={21} />
       </button>
       <img
         className={classes["prod-img"]}

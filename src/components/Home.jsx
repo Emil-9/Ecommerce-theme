@@ -20,7 +20,9 @@ const Home = () => {
       <div className={classes.paddingMain}>
         <FiltersBar onClickItem={changeCategoryHandler} />
         <Products categoryFilter={categoryFilter} />
-        <DiscountSection />
+        <DiscountSection
+          style={{ backgroundColor: "#F86338", color: "#ffffff" }}
+        />
         <BestSeller />
         <ReviewsCard />
       </div>

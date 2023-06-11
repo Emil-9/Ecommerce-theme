@@ -1,6 +1,6 @@
 .pages-menu {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 38px;
   align-items: center;
 }

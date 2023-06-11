@@ -1,0 +1,27 @@
+.marks-value {
+  color: #11142d;
+  font-size: 12px;
+}
+.marks-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #11142d;
+}
+.range-slider-custom .MuiSlider-track {
+  height: 1px;
+  border: none;
+  background-color: #e0e0e0;
+}
+.range-slider-custom .MuiSlider-rail {
+  height: 1px;
+  background-color: #e0e0e0;
+}
+.MuiSlider-thumb {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: #e0e0e0 !important;
+}
+.MuiSlider-thumb:hover, .Mui-focusVisible {
+  box-shadow: 0px 0px 0px 8px #f862384a !important;
+}

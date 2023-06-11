@@ -1,8 +1,8 @@
 import classes from "./Footer.module.css";
 import logo from "../images/footer-logo.png";
-import call from "../images/call.svg";
 import location from "../images/location.svg";
 import mail from "../images/mail.svg";
+import CallIcon from "../images/call.jsx";
 
 const Footer = () => {
   return (
@@ -52,9 +52,7 @@ const Footer = () => {
               <br />
               <li>
                 <a href="+2713866473637">
-                  <span>
-                    <img src={call} alt="" />
-                  </span>
+                  <CallIcon />
                   &nbsp; +271 386-647-3637
                 </a>
               </li>

@@ -4,12 +4,13 @@ import Spinner from "./Spinner";
 import { useEffect, useState } from "react";
 
 const Products = (props) => {
-  const { categoryFilter, priceRange } = props;
+  const { categoryFilter, priceRange, onMaxProp, onMinProp, onSearch } = props;
   const [loading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState();
   const [error, setError] = useState(null);
 
+  // fetch all products
   useEffect(() => {
     const sendRequest = async () => {
       setIsLoading(true);
@@ -28,10 +29,9 @@ const Products = (props) => {
         if (!response.ok) {
           throw new Error("Request failed!");
         }
-        const data = await response.json();
-        setData(data);
-        setFilteredData(data);
-
+        const result = await response.json();
+        setData(result);
+        setFilteredData(result);
       } catch (err) {
         setError(err.message || "Something went wrong!");
       }
@@ -40,26 +40,40 @@ const Products = (props) => {
     sendRequest();
   }, [categoryFilter]);
 
+  // change data on price range change and input search change
+  // note: for future to use this effect in seperated filters the code should be changed
   useEffect(() => {
-    if (!loading && priceRange) {
-      const timer = setTimeout(() => {
-        console.log("update price range", priceRange);
-        if (priceRange.length > 0) {
-          setFilteredData([]);
-          data.forEach((element) => {
-            if (
-              element.price >= priceRange[0] &&
-              element.price <= priceRange[1]
-            ) {
-              console.log(element.price);
-              setFilteredData((prev) => [...prev, element]);
-            }
-          });
+    const timer = setTimeout(() => {
+      if (!loading) {
+        if (
+          (priceRange && priceRange.length > 0) ||
+          (onSearch && onSearch !== "")
+        ) {
+          const filterData = data.filter(
+            (e) =>
+              e.price >= priceRange[0] &&
+              e.price <= priceRange[1] &&
+              e.title
+                .toLowerCase()
+                .trim()
+                .includes(onSearch.toString().toLowerCase().trim())
+          );
+          console.log("filtered", filterData);
+          setFilteredData(filterData);
         }
-      });
-      return () => clearTimeout(timer);
+      }
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [data, loading, onSearch, priceRange]);
+
+  // find the price range for slider max and min
+  useEffect(() => {
+    if (!loading && onMaxProp && onMinProp) {
+      const pricesArray = data.map((el) => el.price);
+      onMaxProp(Math.max(...pricesArray));
+      onMinProp(Math.min(...pricesArray));
     }
-  }, [data, loading, priceRange]);
+  }, [data, onMaxProp, onMinProp, loading]);
 
   return (
     <>

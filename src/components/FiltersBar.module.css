@@ -49,3 +49,14 @@
   outline: none;
   border: none;
 }
+
+.vertical { 
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+}
+.vertical .active::after,
+.vertical li button::after {
+  height: 1px;
+  bottom: -6px;
+}

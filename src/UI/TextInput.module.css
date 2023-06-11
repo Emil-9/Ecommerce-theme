@@ -1,0 +1,9 @@
+.custom-input {
+  width: calc(100% - 32px);
+  outline: none;
+  padding: 16px 18px;
+  color: #9a9ab0;
+  border-radius: 4px;
+  border: 1px solid #9a9ab0;
+  margin-bottom: 32px;
+}
